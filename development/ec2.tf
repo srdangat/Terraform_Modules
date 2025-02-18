@@ -6,7 +6,7 @@ module "dev_compute_1" {
     us-east-2 = "ami-04505e74c0741db90" # ubuntu 20.04 LTS
   }
   aws_region           = var.aws_region
-  instance_type        = "t2.medium"
+  instance_type        = "t3.micro"
   key_name             = "jenkins"
   iam_instance_profile = module.dev_iam_1.instprofile
   public_subnets       = module.dev_vpc_1.public_subnets_id
