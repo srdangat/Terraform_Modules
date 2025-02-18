@@ -2,12 +2,12 @@ module "dev_compute_1" {
   source      = "../modules/compute"
   environment = module.dev_vpc_1.environment
   amis = {
-    us-east-1 = "ami-04505e74c0741db8d" # ubuntu 20.04 LTS
+    ap-south-1 = "ami-023a307f3d27ea427" # ubuntu 20.04 LTS
     us-east-2 = "ami-04505e74c0741db90" # ubuntu 20.04 LTS
   }
   aws_region           = var.aws_region
-  instance_type        = "t2.nano"
-  key_name             = "SecOps-Key"
+  instance_type        = "t2.medium"
+  key_name             = "jenkins"
   iam_instance_profile = module.dev_iam_1.instprofile
   public_subnets       = module.dev_vpc_1.public_subnets_id
   private_subnets      = module.dev_vpc_1.private_subnets_id
